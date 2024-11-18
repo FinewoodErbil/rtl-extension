@@ -1,0 +1,78 @@
+/* Modern RTL Implementation */
+:root[dir="rtl"] {
+  --text-align: right;
+  --direction: rtl;
+  --float: right;
+  --transform-direction: -1;
+}
+
+[data-rtl-processed="true"] {
+  direction: var(--direction) !important;
+  text-align: var(--text-align) !important;
+  unicode-bidi: isolate !important;
+}
+
+/* Logical Properties for Modern Browsers */
+[data-rtl-processed="true"] {
+  margin-inline-start: var(--original-margin-end) !important;
+  margin-inline-end: var(--original-margin-start) !important;
+  padding-inline-start: var(--original-padding-end) !important;
+  padding-inline-end: var(--original-padding-start) !important;
+}
+
+/* Modern Flexbox Handling */
+[data-rtl-processed="true"].rtl-flex {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+
+/* Grid Layout Support */
+[data-rtl-processed="true"].rtl-grid {
+  display: grid !important;
+  direction: rtl !important;
+}
+
+/* Typography Enhancements */
+[data-rtl-processed="true"] {
+  font-feature-settings: "kern", "liga", "clig", "calt", "arab" !important;
+  font-language-override: "ARA" !important;
+}
+
+/* Input Fields with Enhanced RTL Support */
+[data-rtl-processed="true"] input,
+[data-rtl-processed="true"] textarea {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Lists with Proper RTL Markers */
+[data-rtl-processed="true"] ul,
+[data-rtl-processed="true"] ol {
+  padding-inline-start: 0 !important;
+  padding-inline-end: 2em !important;
+}
+
+/* Tables with RTL Support */
+[data-rtl-processed="true"] table {
+  direction: rtl !important;
+}
+
+[data-rtl-processed="true"] th,
+[data-rtl-processed="true"] td {
+  text-align: right !important;
+}
+
+/* Preserve Original Alignment When Needed */
+[data-rtl-processed="true"][data-original-center="true"] {
+  text-align: center !important;
+}
+
+[data-rtl-processed="true"][data-original-justify-center="true"] {
+  justify-content: center !important;
+}
+
+/* Scrollbar Positioning */
+[data-rtl-processed="true"] {
+  scrollbar-width: thin;
+  scrollbar-gutter: stable both-edges;
+}

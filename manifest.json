@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Advanced RTL Support",
+  "version": "1.0.0",
+  "description": "Enhanced RTL support for Arabic websites",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "css": ["styles/rtl.css"],
+    "js": ["scripts/content.js"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "service_worker": "scripts/background.js"
+  }
+}
